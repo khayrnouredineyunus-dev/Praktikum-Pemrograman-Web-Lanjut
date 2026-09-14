@@ -1,0 +1,124 @@
+:root {
+    --tinta: #1b1b1b;
+    --redup: #6b6b6b;
+    --garis: #e3e3e3;
+    --aksen: #b6371f;
+    --latar: #fbfaf8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+    background: var(--latar);
+    color: var(--tinta);
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--garis);
+    background: #fff;
+}
+
+.navbar-merek {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navbar-menu a {
+    color: var(--redup);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.aktif {
+    color: var(--aksen);
+}
+
+.konten {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+}
+
+p + p,
+p + h2 {
+    margin-top: 0.75rem;
+}
+
+.hero-sapa {
+    color: var(--redup);
+}
+
+.hero-peran {
+    color: var(--aksen);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tombol {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--tinta);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.daftar {
+    margin: 0.5rem 0 0 1.25rem;
+}
+
+.kartu {
+    border: 1px solid var(--garis);
+    border-radius: 6px;
+    padding: 1.25rem;
+    background: #fff;
+    margin-top: 1rem;
+}
+
+.kartu-meta {
+    color: var(--redup);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 0;
+}
+
+.footer {
+    border-top: 1px solid var(--garis);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: var(--redup);
+    font-size: 0.85rem;
+}
