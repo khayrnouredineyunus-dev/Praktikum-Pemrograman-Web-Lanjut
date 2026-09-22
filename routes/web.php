@@ -1,12 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MencobaController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProjectController;
+
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
+Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('projects.show');
+
+Route::resource('posts', PostController::class);
+
+Route::get('/mencoba', [MencobaController::class, 'index']);
 
 Route::get('/', function () {
     return view('home', [
         'nama'    => 'Khayr Nouredine Yunus',
         'peran'   => 'Mahasiswa D-IV Teknologi Rekayasa Perangkat Lunak',
-        'ringkas' => 'Mahasiswa Teknik Rekayasa Perangkat Lunak di Sekolah Vokasi Universitas Gadjah Mada dengan minat pada pengembangan perangkat lunak secara menyeluruh, mulai dari aplikasi web, aplikasi mobile, hingga perancangan basis data. Terbiasa mengerjakan proyek individu maupun tim, termasuk kompetisi pengembangan perangkat lunak tingkat nasional, dengan fokus pada praktik rekayasa perangkat lunak yang baik dari tahap desain hingga pengujian.',
+        'ringkas' => 'Mahasiswa Teknologi Rekayasa Perangkat Lunak di Sekolah Vokasi Universitas Gadjah Mada dengan minat pada pengembangan perangkat lunak secara menyeluruh, mulai dari aplikasi web, aplikasi mobile, hingga perancangan basis data. Terbiasa mengerjakan proyek individu maupun tim, termasuk kompetisi pengembangan perangkat lunak, dengan fokus pada praktik rekayasa perangkat lunak yang baik dari tahap desain hingga pengujian.',
     ]);
 })->name('home');
 
@@ -37,24 +49,4 @@ Route::get('/education', function () {
     return view('education', compact('pendidikan'));
 })->name('education');
 
-Route::get('/projects', function () {
-    $projects = [
-        [
-            'judul' => 'MiniFut Arena',
-            'stack' => 'PHP Native, MySQL, PDO',
-            'deskripsi' => 'Sistem pemesanan lapangan mini soccer dengan perhitungan harga di sisi server.',
-        ],
-        [
-            'judul' => 'Cleanesia',
-            'stack' => 'Flutter, Firebase',
-            'deskripsi' => 'Aplikasi pemetaan sampah pesisir berbasis crowdsourcing untuk kompetisi GEMASTIK XIX 2026.',
-        ],
-        [
-            'judul' => 'PANA - Website Kopi Keliling',
-            'stack' => 'HTML, CSS, JavaScript',
-            'deskripsi' => 'Website usaha kopi keliling PANA, menampilkan menu dan informasi pemesanan.',
-        ],
-    ];
 
-    return view('projects', compact('projects'));
-})->name('projects');

@@ -17,6 +17,7 @@
             @empty
                 <p>Belum ada data project.</p>
             @endforelse
+            <p><a href="{{ route('projects.create') }}">+ Tambah Project</a></p>
         </div>
     </section>
 @endsection
