@@ -13,5 +13,6 @@ class Project extends Model
         'judul',
         'stack',
         'deskripsi',
+        'link',
     ];
 }

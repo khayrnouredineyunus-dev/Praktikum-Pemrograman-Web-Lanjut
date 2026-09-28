@@ -26,7 +26,7 @@ Route::get('/about', function () {
     return view('about', [
         'nama'    => 'Khayr Nouredine Yunus',
         'asal'    => 'Yogyakarta',
-        'minat'   => ['Pengembangan web', 'Project Manager', 'Pemrograman perangkat bergerak'],
+        'minat'   => ['Pengembangan web', 'Manajemen Proyek', 'Pemrograman perangkat bergerak'],
     ]);
 })->name('about');
 
