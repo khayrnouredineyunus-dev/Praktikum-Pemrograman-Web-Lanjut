@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 
 class Post extends Model
 {
@@ -12,4 +13,14 @@ class Post extends Model
         'title',
         'description',
     ];
+
+    public function scopeToday(Builder $query): Builder
+    {
+        return $query->whereDate('created_at', today());
+    }
+
+    public function scopeSearch(Builder $query, string $keyword): Builder
+    {
+        return $query->where('title', 'like', "%{$keyword}%");
+    }
 }
