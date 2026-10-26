@@ -122,3 +122,29 @@ p + h2 {
     color: var(--redup);
     font-size: 0.85rem;
 }
+
+.pagination {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.pagination .page-link {
+    display: block;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    color: inherit;
+}
+.pagination .page-item.active .page-link {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+.pagination .page-item.disabled .page-link {
+    opacity: 0.5;
+}
+
+
