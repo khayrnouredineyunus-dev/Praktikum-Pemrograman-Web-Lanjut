@@ -21,6 +21,7 @@
     <p>
         <a href="{{ route('posts.index') }}">Semua</a> |
         <a href="{{ route('posts.index', ['status' => 'published']) }}">Published</a>
+        <a href="{{ route('posts.trash') }}">Trash</a>
     </p>
 
     @forelse ($posts as $post)

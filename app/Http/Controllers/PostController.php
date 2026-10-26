@@ -99,4 +99,28 @@ class PostController extends Controller
         return redirect()->route('posts.index')
             ->with('success', 'Post berhasil dihapus.');
     }
+    public function trash()
+    {
+        $posts = Post::onlyTrashed()->latest('deleted_at')->get();
+        
+        return view('posts.trash', compact('posts'));
+    }
+    
+    public function restore(string $id)
+    {
+        $post = Post::onlyTrashed()->findOrFail($id);
+        $post->restore();
+        
+        return redirect()->route('posts.trash')
+            ->with('success', 'Post berhasil dikembalikan.');
+        
+    }
+    public function forceDestroy(string $id)
+    {
+        $post = Post::onlyTrashed()->findOrFail($id);
+        $post->forceDelete();
+        
+        return redirect()->route('posts.trash')
+            ->with('success', 'Post dihapus permanen.');
+    }
 }

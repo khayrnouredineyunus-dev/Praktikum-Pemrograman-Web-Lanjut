@@ -9,7 +9,9 @@ Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
 Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
 Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('projects.show');
-
+Route::get('posts/trash', [PostController::class, 'trash'])->name('posts.trash');
+Route::patch('posts/{id}/restore', [PostController::class, 'restore'])->name('posts.restore');
+Route::delete('posts/{id}/force', [PostController::class, 'forceDestroy'])->name('posts.force-destroy');
 Route::resource('posts', PostController::class);
 
 Route::get('/mencoba', [MencobaController::class, 'index']);
