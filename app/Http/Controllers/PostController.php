@@ -13,19 +13,29 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $query = Post::query();
-    
+        
         if ($request->filled('search')) {
             $query->search($request->search);
-    }
-
-    if ($request->query('status') === 'published') {
-        $query->published();
-    }
-
-    $posts = $query->get();
-
-    return view('posts.index', compact('posts'));
-    }
+        
+        }
+        if ($request->query('status') === 'published') {
+            $query->published();
+            
+        }
+        
+        $perPage = (int) $request->input('per_page', 10);
+        
+        if (! in_array($perPage, [5, 10, 25])) {
+            $perPage = 10;
+        }
+        
+        $posts = $query->orderBy('created_at', 'desc')
+                        ->orderBy('id', 'desc')
+                        ->paginate($perPage)
+                        ->withQueryString();
+                        
+        return view('posts.index', compact('posts'));
+}
 
     /**
      * Show the form for creating a new resource.
