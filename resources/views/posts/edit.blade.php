@@ -32,6 +32,13 @@
             <textarea id="description" name="description" rows="5">{{ old('description', $post->description) }}</textarea>
         </div>
         
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="draft" @selected(old('status', $post->status) === 'draft')>Draft</option>
+                <option value="published" @selected(old('status', $post->status) === 'published')>Published</option>
+            </select>
+        </div>
         <button type="submit">Simpan Perubahan</button>
     </form>
 </div>

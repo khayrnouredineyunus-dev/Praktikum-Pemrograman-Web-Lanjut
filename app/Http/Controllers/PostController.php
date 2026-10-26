@@ -18,6 +18,10 @@ class PostController extends Controller
             $query->search($request->search);
     }
 
+    if ($request->query('status') === 'published') {
+        $query->published();
+    }
+
     $posts = $query->get();
 
     return view('posts.index', compact('posts'));
@@ -39,6 +43,7 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|min:5|max:200',
             'description' => 'required|string|min:10',
+            'status' => 'required|in:draft,published',
 ]);
         
         Post::create($validatedData);
@@ -73,6 +78,7 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:200',
             'description' => 'required|string',
+            'status' => 'required|in:draft,published',
     ]);
 
     $post = Post::findOrFail($id);

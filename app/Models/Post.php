@@ -12,6 +12,7 @@ class Post extends Model
     protected $fillable = [
         'title',
         'description',
+        'status',
     ];
 
     public function scopeToday(Builder $query): Builder
@@ -22,5 +23,10 @@ class Post extends Model
     public function scopeSearch(Builder $query, string $keyword): Builder
     {
         return $query->where('title', 'like', "%{$keyword}%");
+    }
+
+    public function scopePublished(Builder $query): Builder
+    {
+    return $query->where('status', 'published');
     }
 }

@@ -24,6 +24,13 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" rows="5">{{ old('description') }}</textarea>
         </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="draft" @selected(old('status', 'draft') === 'draft')>Draft</option>
+                <option value="published" @selected(old('status', 'draft') === 'published')>Published</option>
+            </select>
+        </div>
         <button type="submit">Submit</button>
     </form>
 </div>
