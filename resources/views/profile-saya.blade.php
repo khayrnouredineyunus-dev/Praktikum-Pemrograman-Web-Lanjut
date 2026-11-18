@@ -9,6 +9,7 @@
     <article class="kartu">
         <h2>{{ $user->name }}</h2>
         <p class="kartu-meta">Email: {{ $user->email }}</p>
+        <p class="kartu-meta">Peran: {{ $user->role }}</p>
         <p class="kartu-meta">Terdaftar sejak: {{ $user->created_at->format('d-m-Y H:i') }}</p>
     </article>
 </div>
