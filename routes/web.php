@@ -51,4 +51,4 @@ Route::get('/education', function () {
     return view('education', compact('pendidikan'));
 })->name('education');
 
-
+require __DIR__.'/auth.php';
