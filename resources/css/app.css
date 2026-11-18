@@ -147,4 +147,17 @@ p + h2 {
     opacity: 0.5;
 }
 
-
+.navbar-menu form {
+    display: inline;
+}
+.navbar-menu .tombol-keluar {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+.navbar-menu .tombol-keluar:hover {
+    text-decoration: underline;
+}
