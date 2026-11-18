@@ -21,6 +21,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('posts', PostController::class);
 });
 
+Route::middleware('auth')->get('/profile-saya', function () {
+    return view('profile-saya', ['user' => auth()->user()]);
+})->name('profile-saya');
+
 Route::get('/mencoba', [MencobaController::class, 'index']);
 
 Route::get('/', function () {
