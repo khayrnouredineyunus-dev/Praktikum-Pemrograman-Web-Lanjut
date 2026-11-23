@@ -161,3 +161,135 @@ p + h2 {
 .navbar-menu .tombol-keluar:hover {
     text-decoration: underline;
 }
+
+
+/* ===== Pertemuan 10: dashboard, thumbnail, galeri ===== */
+.judul-bagian {
+    font-size: 1.3rem;
+    margin: 2.25rem 0 0.25rem;
+}
+
+.statistik {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.stat-kartu {
+    background: #fff;
+    border: 1px solid var(--garis);
+    border-left-width: 4px;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+}
+.stat-kartu .stat-label {
+    color: var(--redup);
+    font-size: 0.85rem;
+}
+.stat-kartu .stat-nilai {
+    margin-top: 0.25rem;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.stat-kartu-netral { border-left-color: var(--redup); }
+.stat-kartu-aksen  { border-left-color: var(--aksen); }
+.stat-kartu-biru   { border-left-color: #2b5fa8; }
+.stat-kartu-hijau  { border-left-color: #2f7d4f; }
+.stat-kartu-kuning { border-left-color: #b7791f; }
+
+.pesan-sukses {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background: #e8f4ec;
+    border: 1px solid #b9dcc4;
+    border-radius: 4px;
+    color: #1f5a35;
+    font-size: 0.9rem;
+}
+
+.daftar-error {
+    margin: 1rem 0 1rem 1.25rem;
+    color: var(--aksen);
+    font-size: 0.9rem;
+}
+
+.kartu-thumbnail {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.thumbnail-detail {
+    display: block;
+    max-width: 100%;
+    margin: 0.5rem 0 1rem;
+    border-radius: 6px;
+}
+
+.thumbnail-edit {
+    display: block;
+    width: 240px;
+    max-width: 100%;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+}
+
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.galeri-item {
+    border: 1px solid var(--garis);
+    border-radius: 6px;
+    background: #fff;
+    padding: 0.5rem;
+}
+.galeri-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.galeri-item figcaption {
+    margin-top: 0.4rem;
+    color: var(--redup);
+    font-size: 0.85rem;
+}
+.galeri-item form {
+    margin-top: 0.5rem;
+}
+.galeri-item input[type="text"] {
+    width: 100%;
+    margin-bottom: 0.35rem;
+}
+
+.aksi {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+.aksi form {
+    display: inline;
+}
+
+.tombol-bahaya {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: var(--aksen);
+    cursor: pointer;
+}
+.tombol-bahaya:hover {
+    text-decoration: underline;
+}

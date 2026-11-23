@@ -8,6 +8,7 @@
         <li><a href="{{ route('projects') }}" class="{{ request()->routeIs('projects') ? 'aktif' : '' }}">Projects</a></li>
 
         @auth
+            <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'aktif' : '' }}">Dashboard</a></li>
             <li><a href="{{ route('posts.index') }}" class="{{ request()->routeIs('posts.*') ? 'aktif' : '' }}">Posts</a></li>
             <li class="navbar-pengguna">{{ Auth::user()->name }}</li>
             <li>

@@ -1,13 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MencobaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProjectImageController;
 
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
     Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
 });
@@ -19,6 +22,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::patch('posts/{id}/restore', [PostController::class, 'restore'])->name('posts.restore');
     Route::delete('posts/{id}/force', [PostController::class, 'forceDestroy'])->name('posts.force-destroy');
     Route::resource('posts', PostController::class);
+
+    Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+    Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
+    Route::delete('/projects/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+
+    Route::post('/projects/{project}/images', [ProjectImageController::class, 'store'])->name('projects.images.store');
+    Route::put('/projects/{project}/images/{image}', [ProjectImageController::class, 'update'])->name('projects.images.update');
+    Route::delete('/projects/{project}/images/{image}', [ProjectImageController::class, 'destroy'])->name('projects.images.destroy');
 });
 
 Route::middleware('auth')->get('/profile-saya', function () {
