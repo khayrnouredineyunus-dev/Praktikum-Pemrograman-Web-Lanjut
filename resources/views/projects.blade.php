@@ -6,6 +6,10 @@
     <section>
         <h1>Projects</h1>
 
+        @if (session('success'))
+            <div class="pesan-sukses">{{ session('success') }}</div>
+        @endif
+
         @php
             $total = count($projects);
         @endphp
