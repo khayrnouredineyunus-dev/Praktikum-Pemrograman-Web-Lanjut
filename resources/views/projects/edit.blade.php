@@ -21,18 +21,9 @@
     <form action="{{ route('projects.update', $project) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class="form-group">
-            <label for="judul">Judul</label>
-            <input type="text" id="judul" name="judul" value="{{ old('judul', $project->judul) }}">
-        </div>
-        <div class="form-group">
-            <label for="stack">Stack</label>
-            <input type="text" id="stack" name="stack" value="{{ old('stack', $project->stack) }}">
-        </div>
-        <div class="form-group">
-            <label for="deskripsi">Deskripsi</label>
-            <textarea id="deskripsi" name="deskripsi" rows="5">{{ old('deskripsi', $project->deskripsi) }}</textarea>
-        </div>
+
+        @include('partials.form-project')
+
         <div class="form-group">
             <label for="thumbnail">Thumbnail</label>
             @if ($project->thumbnail)
@@ -82,7 +73,7 @@
     @endif
 
     <div class="aksi">
-        <a href="{{ route('projects.show', $project->id) }}">Lihat halaman project</a>
+        <a href="{{ route('projects.show', $project) }}">Lihat halaman project</a>
     </div>
 </div>
 @endsection

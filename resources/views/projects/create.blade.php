@@ -16,18 +16,9 @@
 
     <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
-            <label for="judul">Judul</label>
-            <input type="text" id="judul" name="judul" value="{{ old('judul') }}">
-        </div>
-        <div class="form-group">
-            <label for="stack">Stack</label>
-            <input type="text" id="stack" name="stack" value="{{ old('stack') }}">
-        </div>
-        <div class="form-group">
-            <label for="deskripsi">Deskripsi</label>
-            <textarea id="deskripsi" name="deskripsi" rows="5">{{ old('deskripsi') }}</textarea>
-        </div>
+
+        @include('partials.form-project', ['project' => null])
+
         <div class="form-group">
             <label for="thumbnail">Thumbnail</label>
             <input type="file" id="thumbnail" name="thumbnail" accept="image/jpeg,image/png,image/webp">
