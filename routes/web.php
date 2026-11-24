@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
 });
 
-Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])->name('projects.show');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('posts/trash', [PostController::class, 'trash'])->name('posts.trash');

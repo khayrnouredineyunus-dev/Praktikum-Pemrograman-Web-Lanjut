@@ -19,7 +19,7 @@
     <h2 class="judul-bagian">Project dengan foto terbanyak</h2>
     @forelse ($topProjects as $project)
         <article class="kartu">
-            <h2><a href="{{ route('projects.show', $project->id) }}">{{ $project->judul }}</a></h2>
+            <h2><a href="{{ route('projects.show', $project) }}">{{ $project->judul }}</a></h2>
             <p class="kartu-meta">{{ $project->images_count }} foto di galeri</p>
         </article>
     @empty

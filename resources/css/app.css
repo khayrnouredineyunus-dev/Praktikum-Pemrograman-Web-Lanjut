@@ -209,6 +209,16 @@ p + h2 {
     font-size: 0.9rem;
 }
 
+.pesan-hapus {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background: #fdecec;
+    border: 1px solid #f1b8b8;
+    border-radius: 4px;
+    color: #8a1f1f;
+    font-size: 0.9rem;
+}
+
 .daftar-error {
     margin: 1rem 0 1rem 1.25rem;
     color: var(--aksen);
@@ -292,4 +302,95 @@ p + h2 {
 }
 .tombol-bahaya:hover {
     text-decoration: underline;
+}
+
+
+/* ===== Pertemuan 11: pencarian, filter, pengurutan ===== */
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 0.5rem;
+}
+.filter input[type="text"] {
+    flex: 1 1 220px;
+}
+.filter input,
+.filter select,
+.filter button {
+    padding: 0.45rem 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background: #fff;
+    font: inherit;
+    font-size: 0.9rem;
+}
+.filter button {
+    background: var(--tinta);
+    border-color: var(--tinta);
+    color: #fff;
+    cursor: pointer;
+}
+
+.hasil-info {
+    margin-top: 0.5rem;
+    color: var(--redup);
+    font-size: 0.9rem;
+}
+
+.grid-project {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+.grid-project .kartu {
+    margin-top: 0;
+}
+
+.kosong {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    color: var(--redup);
+}
+
+.lencana-daftar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.6rem;
+}
+.lencana {
+    display: inline-block;
+    padding: 0.05rem 0.55rem;
+    border: 1px solid var(--garis);
+    border-radius: 999px;
+    background: var(--latar);
+    color: var(--redup);
+    font-size: 0.78rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+a.lencana:hover {
+    color: var(--aksen);
+    border-color: var(--aksen);
+}
+.lencana-draft {
+    margin-left: 0.35rem;
+    border-color: #e0c27a;
+    background: #fdf6e3;
+    color: #8a5a00;
+    vertical-align: middle;
+}
+
+.centang-daftar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+}
+.centang {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
 }
